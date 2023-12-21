@@ -1,0 +1,38 @@
+import fitz
+
+def highlighter(pdf_file, output):
+
+    pdf = fitz.open(pdf_file)
+    for page_num, page in enumerate(pdf):
+        links = page.get_links()
+
+        for link in links:
+            rect = link.get('from')
+            highlight = page.add_highlight_annot(rect)
+
+    pdf.save(output)
+    pdf.close
+
+        
+def link_check(pdf_file):
+    
+    pdf = fitz.open(pdf_file)
+
+    for page_num, page in enumerate(pdf):
+        links = page.get_links()
+
+        if not links:
+            print (f"Page {page_num + 1}: No Links")
+
+        else:
+            for link in links:
+                url = link.get('uri')
+                print (f"Page {page_num + 1}: {url}")
+
+      
+
+input_pdf = r'C:\Users\mhaq\Desktop\Python\Useful\PDF Link Checker\pdflink.pdf'
+output = r'C:\Users\mhaq\Desktop\Python\Useful\PDF Link Checker\Highlighted.pdf'
+
+link_check(input_pdf)
+highlighter(input_pdf, output)
