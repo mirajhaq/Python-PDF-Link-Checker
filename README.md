@@ -1,8 +1,8 @@
 # Python-PDF-Link-Checker
 
-Using the PyMyPDF
-PyMuPDF is a high-performance Python library for data extraction, analysis, conversion & manipulation of PDF (and other) documents.
+A simple script to identify and highlight hyperlinks in PDF files using PyMuPDF. Great for quickly finding links in large documents.
 
-If you have a PDF thats maybe 500 pages, and you want to know if there are any links in that PDF. 
-Running this code will go page by page and list out which link is on what page.
-It will also create a seperate Highlighted PDF that highlights the clicable areas that the link sits on.
+Detects all hyperlinks in a PDF
+Outputs a new PDF with highlighted links
+
+Please feel free to suggest any improvments, or if you notice any mistakes
